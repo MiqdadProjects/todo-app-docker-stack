@@ -1,3 +1,4 @@
+
 # Use Python Alpine base image with version 3.13.1
 FROM python:3.13.1-alpine3.9
 
@@ -24,5 +25,5 @@ COPY . .
 # The default Flask port is 5000.
 EXPOSE 5000
 
-# Command to run when the container starts.  
+# Command to run when the container starts. And on local host app will run.
 CMD ["python", "app.py"]
