@@ -1,10 +1,9 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
-# In-memory list to simulate database
 todos = [
     {"id": 1, "task": "Learn Docker"},
     {"id": 2, "task": "Build ToDo app"}
@@ -13,7 +12,7 @@ next_id = 3
 
 @app.route('/')
 def home():
-    return "Welcome to the To-Do API! Use /api/todos to get the list."
+    return render_template('index.html')
 
 @app.route('/api/todos', methods=['GET'])
 def get_todos():
