@@ -11,6 +11,10 @@ todos = [
 ]
 next_id = 3
 
+@app.route('/')
+def home():
+    return "Welcome to the To-Do API! Use /api/todos to get the list."
+
 @app.route('/api/todos', methods=['GET'])
 def get_todos():
     return jsonify(todos)
