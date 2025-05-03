@@ -21,7 +21,7 @@ function App() {
     })
       .then(res => res.json())
       .then(added => {
-        setTodos([...todos, added]);
+        setTodos(prevTodos => [...prevTodos, added]);  // Functional update here
         setNewTask('');
       });
   };
@@ -29,7 +29,9 @@ function App() {
   // Delete task
   const handleDelete = (id) => {
     fetch(`/api/todos/${id}`, { method: 'DELETE' })
-      .then(() => setTodos(todos.filter(todo => todo.id !== id)));
+      .then(() => {
+        setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));  // Functional update here
+      });
   };
 
   return (
