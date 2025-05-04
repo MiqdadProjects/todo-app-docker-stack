@@ -1,11 +1,44 @@
+/* Existing body and container styles */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    margin: 20px;
-  }
-  
-  h1 {
-    color: #007bff;
-  }
-  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb, #ffe0f0);
+  background-size: 300% 300%;
+  animation: pinkFade 20s ease infinite;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  background-color: rgba(255, 240, 245, 0.3);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  backdrop-filter: blur(8px);
+  border: 2px solid #ffd1dc;
+}
+
+h1 {
+  color: #ff69b4;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+p {
+  font-size: 1.1em;
+  color: #4a4a4a;
+}
+
+@keyframes pinkFade {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
