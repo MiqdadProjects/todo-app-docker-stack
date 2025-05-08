@@ -1,29 +1,21 @@
-
 # Use Python Alpine base image with version 3.13.1
-FROM python:3.13.1-alpine3.9
+FROM python:3.13.3-alpine
 
-# Install dependencies.  Alpine uses apk, and we're installing
-# build tools (gcc, musl-dev) and postgres client libraries.
+# Install dependencies
 RUN apk add --no-cache gcc musl-dev libpq-dev
 
-# Set the working directory within the container.
-# All subsequent commands will be executed in this directory.
+# Set working directory
 WORKDIR /app
 
-# Copy the requirements file into the container.
-
-COPY requirements.txt .
-
-# Install Python packages from requirements.txt.
-# The --no-cache-dir flag reduces the size of the final image.
+# Copy requirement file and install Python dependencies
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the application code into the container. 
-COPY . .
+# Copy environment variables and app code and all files 
+COPY . .  
 
-# Expose the port that  Flask application listens on.
-# The default Flask port is 5000.
+# Expose Flask port
 EXPOSE 5000
 
-# Command to run when the container starts. And on local host app will run.
+# Run the application
 CMD ["python", "app.py"]
