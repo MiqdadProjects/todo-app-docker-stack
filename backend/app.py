@@ -13,7 +13,7 @@ CORS(app)
 # Database configuration from environment or defaults
 DB_USER = os.getenv('DB_USER', 'postgres')
 DB_PASSWORD = os.getenv('DB_PASSWORD', 'secret_pass')
-DB_HOST = os.getenv('DB_HOST', 'localhost')
+DB_HOST = os.getenv('DB_HOST', 'db')
 DB_NAME = os.getenv('DB_NAME', 'tododb')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'
