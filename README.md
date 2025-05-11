@@ -30,18 +30,21 @@ A simple and efficient Todo application, containerized and orchestrated using Do
 
 1. Clone the repository:
    git clone https://github.com/MiqdadProjects/todo-app-docker-stack.git
-    cd todo-app-docker-stack
 
-2. **(Optional) Configure environment variables:**
+    ```
+   cd todo-app-docker-stack
+  ```
 
-- Edit `backend/.env` if you want to change database credentials or settings.  
+  2. **(Optional) Configure environment variables:**
+
+  - Edit `backend/.env` if you want to change database credentials or settings.  
 
   The default is:
   ```
-  DB_USER=postgres
-  DB_PASSWORD=secret_pass
-  DB_HOST=db
-  DB_NAME=tododb
+    DB_USER=postgres
+    DB_PASSWORD=secret_pass
+    DB_HOST=db
+    DB_NAME=tododb
   ```
 
 3. **Build and run the containers:** `docker-compose up --build`
