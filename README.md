@@ -54,6 +54,32 @@ Choose your preferred setup method and follow the step-by-step instructions:
 
 ---
 
+## 🐘 Accessing the Database Container
+
+To connect to the PostgreSQL database container and run queries:
+
+1. **Open a terminal into the database container:**
+    ```
+    docker exec -it postgres-db psql -U postgres -d tododb
+    ```
+
+2. **List tables:**
+    ```
+    \dt
+    ```
+
+3. **Query all todos:**
+    ```
+    SELECT * FROM todos;
+    ```
+
+4. **Exit psql shell:**
+    ```
+    \q
+    ```
+
+---
+
 ## 🛠 Local Development (Optional)
 
 ### Frontend (React)
