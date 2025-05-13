@@ -13,17 +13,17 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    volumes:
-      - ./backend:/app
-    # Ensures backend waits for .env vars to load if needed
     env_file:
       - ./backend/.env
+    # Remove volume mount for backend source code to avoid conflicts with built image
+    # volumes:
+    #   - ./backend:/app
 
   frontend:
     build: ./frontend
     container_name: react-frontend
     ports:
-      - "3000:3000"
+      - "3000:80"  # Map host port 3000 to container port 80 (nginx)
     depends_on:
       - backend
 
